@@ -1,0 +1,567 @@
+body, html {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'PT Sans', sans-serif;
+}
+a {
+	color: #000;
+	font-family: 'PT Mono', monospace;
+}
+ul {
+	list-style: none;
+	padding: 0;
+}
+input[type="text"],input[type="email"] {
+	/* Remove First */
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	/* Then Style */
+	border-radius: 8px;
+	border: 1px solid #BBB;
+	padding: 10px;
+	line-height: 20px;
+	text-align: left;
+	background: transparent;
+	outline: none;
+	width: 50%;
+	height: 25px;
+	font-size: 1em;
+	font-weight: 700;
+}
+textarea {
+	/* Remove First */
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	resize: none;
+
+	/* Then Style */
+	border-radius: 8px;
+	border: 1px solid #BBB;
+	padding: 10px;
+	line-height: 20px;
+	text-align: center;
+	background: transparent;
+	outline: none;
+	width: 50%;
+	height: 100px;
+	font-size: 1em;
+	font-weight: 700;
+}
+label {
+	font-family: 'PT Sans', sans-serif;
+}
+button {
+	cursor: pointer;
+	font-size: 1em;
+	font-weight: 700;
+}
+button:focus {
+	outline: none;
+}
+button:active {
+  color: rgb(51,51,51);
+  border: 1px solid rgb(204,204,204);
+  background: rgb(238,238,238) linear-gradient(rgb(238,238,238), rgb(224,224,224));
+  box-shadow: 0 1px 2px rgba(0,0,0,.1) inset;
+}
+/* Cначала обозначаем стили для IE8 и более старых версий
+т.е. здесь мы немного облагораживаем стандартный чекбокс. */
+.checkbox {
+  vertical-align: top;
+  margin: 0 3px 0 0;
+  width: 17px;
+  height: 17px;
+}
+/* Это для всех браузеров, кроме совсем старых, которые не поддерживают
+селекторы с плюсом. Показываем, что label кликабелен. */
+.checkbox + label {
+  cursor: pointer;
+}
+
+/* Далее идет оформление чекбокса в современных браузерах, а также IE9 и выше.
+Благодаря тому, что старые браузеры не поддерживают селекторы :not и :checked,
+в них все нижеследующие стили не сработают. */
+
+/* Прячем оригинальный чекбокс. */
+.checkbox:not(checked) {
+  position: absolute;
+  opacity: 0;
+}
+.checkbox:not(checked) + label {
+  position: relative; /* будем позиционировать псевдочекбокс относительно label */
+  padding: 0 0 0 60px; /* оставляем слева от label место под псевдочекбокс */
+}
+/* Показываем получение фокуса. */
+.checkbox:focus + label:before {
+  box-shadow: 0 0 0 3px rgba(255,255,0,.5);
+}
+#header {
+	width: 65%;
+	margin: 10px auto 10px auto;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-content: center;
+	flex-direction: row;
+}
+#header ul {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-content: center;
+	flex-direction: row;
+	list-style: none;
+	padding: 0;
+	width: 70%;
+}
+#header ul li a {
+	border-bottom: 1px solid #000;
+	font-weight: 500;
+	text-decoration: none;
+	margin: 10px;
+}
+.main-container {
+	width: 75%;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+}
+#header .button-buy {
+	display: flex;
+	font-weight: 500;
+	text-decoration: none;
+	padding: 10px 20px 10px 20px;
+	margin: 5px;
+	color: white;
+	background: #ce5fba;
+	background: -moz-linear-gradient(top, #ce5fba 0%, #b55385 51%, #a03172 100%); 
+	background: -webkit-linear-gradient(top, #ce5fba 0%,#b55385 51%,#a03172 100%);
+	background: linear-gradient(to bottom, #ce5fba 0%,#b55385 51%,#a03172 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ce5fba', endColorstr='#a03172',GradientType=0 ); 
+	border-radius: 5px;
+}
+#position-1 {
+	background: url(/images/Exposure1.png);
+	height: 930px;
+	width: 100%;
+	background-position: 50% 50%;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+	background-repeat: no-repeat;
+	
+}
+#footer {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-content: center;
+	flex-direction: column;
+}
+#footer .footer-social ul {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-content: center;
+	flex-direction: row;
+	margin: 10px;
+}
+#footer .footer-copy {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	align-content: center;
+	flex-direction: row;
+}
+#position-1 {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-content: center;
+	flex-direction: column;
+	font-family: 'PT Mono', monospace;
+	color: #fff;
+}
+#position-1 .main-logo {
+	background: url('/images/logo.png') no-repeat 50% 50%;
+	margin: 0 auto;
+	display: flex;
+	height: 400px;
+	width: 800px;
+	background-size: contain;
+	margin-top: -100px;
+}
+#position-1 .middle-box {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	align-content: center;
+	flex-direction: row;
+	font-size: 1.5em;
+}
+#position-1 .middle-box .first-box {
+	padding: 15px 20px 15px 20px;
+	border-radius: 8px;
+	border: 1px solid #fff;
+	display: flex;
+	align-content: center;
+	align-items: center;
+	text-align: center;
+}
+#position-1 .middle-box .second-box .image {
+	background: url('/images/arrow.png') no-repeat 50% 50%;
+	background-size: contain;
+	width: 80px;
+	height: 100px;
+	margin-right: 20px;
+}
+#position-1 .middle-box .second-box {
+	display: flex;
+	align-content: center;
+	align-items: center;
+	text-align: center;
+}
+#position-1 .info-text {
+	font-size: 2em;
+	text-align: center;	
+	font-family: 'PT Sans', sans-serif;
+	width: 800px;
+	margin: 40px auto 20px auto;
+}
+#position-2 {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-content: center;
+	flex-direction: column;
+	font-family: 'PT Mono', monospace;
+}
+#position-2 .header {
+	font-size: 6em;
+	font-weight: 700;
+}
+#position-2 .subheader {
+	font-size: 2.3em;
+	font-weight: 900;
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding: 50px;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#position-2 .main-box {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-content: center;
+	flex-direction: row;
+}
+#position-2 .main-box .panel-box{
+	text-align: center;
+	width: 30%;
+}
+#position-2 .arrow-yellow {
+	background: url('/images/yellow-arrow-down.png') no-repeat 50% 50%;
+	height: 50px;
+	background-size: contain;
+	margin-bottom: 20px;
+}
+#position-2 .arrow-pink {
+	background: url('/images/pink-arrow-down.png') no-repeat 50% 50%;
+	height: 50px;
+	background-size: contain;
+	margin-bottom: 20px;
+}
+#position-2 .arrow-blue {
+	background: url('/images/blue-arrow-down.png') no-repeat 50% 50%;
+	height: 50px;
+	background-size: contain;
+	margin-bottom: 20px;
+}
+#position-3 {
+	margin-top: 100px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-content: center;
+	flex-direction: column;
+	font-family: 'PT Mono', monospace;
+}
+#position-3 .header {
+	font-size: 6em;
+	font-weight: 700;
+}
+#position-3 .header-text {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 1.25em;
+}
+#position-3 .main-text {
+	display: none;
+}
+#position-3 .default-text {
+	display: flex;
+	font-size: 1.3em;
+	font-weight: 700;
+	align-content: left;
+	flex-direction: column;
+}
+#position-3 .game-zone .kvest-help {
+	font-size: 0.7em;
+	font-weight: 500;
+	text-decoration: none;
+}
+#position-3 .mini-box {
+	display: flex;
+	align-items: center;
+	text-align: left;
+	flex-direction: row;
+	width: 45%;
+	height: 140px;
+	padding-right: 15px;
+}
+#position-3 .mini-box-2 {
+	display: flex;
+	align-items: center;
+	text-align: left;
+	flex-direction: row;
+	width: 45%;
+	height: 140px;
+	padding-right: 15px;
+}
+#position-3 .mini-box:hover .default-text {
+	display: none;
+}
+#position-3 .mini-box:hover {
+	background-size: contain !important;
+}
+#position-3 .mini-box:hover .main-text {
+	display: flex;
+	width: 80%;
+	height: 100%;
+	z-index: 5000;
+	color: #fff;
+	text-align: center;
+  align-items: center;
+}
+#position-3 .mini-box-2:hover .default-text {
+	display: none;
+}
+#position-3 .mini-box-2:hover {
+	background-size: contain !important;
+}
+#position-3 .mini-box-2:hover .main-text {
+	display: flex;
+	width: 80%;
+	height: 100%;
+	z-index: 5000;
+	color: #fff;
+	text-align: center;
+  align-items: center;
+}
+#position-3 .game-zone .mini-box-2:hover .main-text {
+	color: #000;
+}
+#position-3 .game-zone .mini-box:hover .main-text {
+	color: #000;
+}
+#position-3 .game-zone .mini-box-2:hover .main-text {
+	color: #000;
+}
+#position-3 .game-zone .mini-box:hover .main-text {
+	color: #000;
+}
+#position-3 .default-container {
+	display: flex;
+	justify-content: left;
+	flex-wrap: wrap;
+	align-content: center;
+	flex-direction: row;
+
+}
+#position-3 .image {
+	width: 50px; 
+	height: 50px; 
+	margin-left: 35px;
+	margin-right: 10px;
+	background-size: contain !important;
+}
+#position-3 .game-zone {
+	display: flex;
+	justify-content: left;
+	flex-wrap: wrap;
+	align-content: center;
+	flex-direction: row;
+}
+#position-6 {
+	margin-top: 100px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-content: center;
+	flex-direction: column;
+	font-family: 'PT Mono', monospace;
+}
+#position-6 .header {
+	font-size: 6em;
+	font-weight: 700;
+}
+#position-6 .organization-box {
+	margin-top: 60px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: left;
+	align-content: center;
+	flex-direction: row;
+}
+#position-6 .block-1 .image {
+	background: url('/images/ns.png') no-repeat 50% 50%;
+	background-size: contain;
+	width: 150px;
+	height: 75px;
+}
+#position-6 .block-2 .image {
+	background: url('/images/cmt.png') no-repeat 50% 50%;
+	background-size: contain;
+	width: 150px;
+	height: 75px;
+}
+#position-6 .block-1 {
+	font-family: 'PT Sans', sans-serif;
+	width: 50%;
+}
+#position-6 .block-2 {
+	font-family: 'PT Sans', sans-serif;
+	width: 50%;
+}
+#position-6 .text-info {
+	font-size: 0.8em;
+	width: 60%;
+}
+#position-6 .header-partner {
+	font-size: 3em;
+	font-weight: 700;
+	margin-top: 70px;
+	margin-bottom: 35px;
+}
+#position-6 .partners {
+	display: flex;
+	justify-content: left;
+	flex-wrap: wrap;
+	align-content: center;
+	flex-direction: row;
+}
+#position-6 img {
+	width: 21%;
+	height: 5%;
+	margin-left: 0;
+	margin-right: 20px;
+}
+#position-7 {
+	margin-top: 200px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-content: center;
+	flex-direction: column;
+	font-family: 'PT Mono', monospace;
+}
+#position-7 .header {
+	font-size: 6em;
+	font-weight: 700;
+}
+#position-7 .info {
+	display: flex;
+	justify-content: left;
+	flex-wrap: wrap;
+	align-content: center;
+	flex-direction: row;
+	margin-left: 8px;
+}
+#position-7 .info ul {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	flex-direction: row;
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+#position-7 .info ul li {
+	font-family: 'PT Sans', monospace;
+	font-size: 1.2em;
+	margin-left: -5px;
+	margin-right: 25px;
+	display: flex;
+	line-height: 50px;
+	align-items: center;
+}
+#position-7 .form-header {
+	font-size: 3em;
+	font-weight: 700;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 3px;
+}
+#position-7 form {
+	margin: 5px;
+	display: flex;
+	align-items: left;
+	justify-content: left;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
+#position-7 .send-btn {
+	font-family: 'PT Mono', monospace;
+	display: flex;
+	font-weight: 500;
+	text-decoration: none;
+	padding: 10px 25px 10px 25px;
+	color: white;
+	background: #ce5fba;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	height: 50px;
+	font-size: 1.1em;
+	background: -moz-linear-gradient(top, #ce5fba 0%, #b55385 51%, #a03172 100%); 
+	background: -webkit-linear-gradient(top, #ce5fba 0%,#b55385 51%,#a03172 100%);
+	background: linear-gradient(to bottom, #ce5fba 0%,#b55385 51%,#a03172 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ce5fba', endColorstr='#a03172',GradientType=0 ); 
+	border-radius: 5px;
+	border: none;
+}
+.info-telegram {
+	display: inline-flex;
+	background: url('/images/telegram.png') no-repeat 50% 50%;
+	width: 50px;
+	height: 50px;
+	margin-right: 20px;
+	background-size: cover;
+}
+.info-email {
+	display: inline-flex;
+	background: url('/images/email.png') no-repeat 50% 50%;
+	width: 50px;
+	height: 50px;
+	margin-right: 20px;
+	background-size: cover;
+}
+#social-1 {
+	margin: 10px;
+}
+#social-2 {
+	margin: 10px;
+}
+#social-3 {
+	margin: 10px;
+}
+@media screen and (min-width: 1440px) {
+	#position-1 {
+		background-size: cover;
+	}
+}
