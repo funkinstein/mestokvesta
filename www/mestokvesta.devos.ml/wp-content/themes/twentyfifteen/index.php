@@ -22,9 +22,7 @@ wp_enqueue_script( 'wp-api' );
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Место Квеста</title>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js" type="text/javascript"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js" type="text/javascript"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.0/backbone.localStorage-min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="/js/scroll.js"></script>
   <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
   <link rel="stylesheet" href="/main.css">
@@ -39,10 +37,10 @@ wp_enqueue_script( 'wp-api' );
 <body>
   <div id="header">
     <ul class="menu">
-      <li><a href="#">Программа</a></li>
-      <li><a href="#">Ярославль</a></li>
-      <li><a href="#">Организаторы</a></li>
-      <li><a href="#">Контакты</a></li>
+      <li><a href="##position-3">Программа</a></li>
+      <li><a href="##position-5">Ярославль</a></li>
+      <li><a href="##position-6">Организаторы</a></li>
+      <li><a href="##position-7">Контакты</a></li>
     </ul>
       <a class="button-buy" href="#">Купить билет</a>
   </div>
@@ -115,7 +113,7 @@ wp_enqueue_script( 'wp-api' );
     <div class="header-text">Игровая часть в субботу и воскресенье, 16 и 17 сентября:</div>
     <div class="game-zone">
         <div class="mini-box" data-id="2" data-image="bg-kvest-1">
-          <div class="image" style='z-index: 1000;background: url("/images/pr-2-1.png") no-repeat 50% 50%;'></div>
+          <div class="image" style='z-index: 1000;-webkit-mask: url("/images/qv-escape.svg") no-repeat 50% 50%;mask: url("/images/qv-escape.svg") no-repeat 50% 50%;'></div>
           <div class='default-text'>
             Эскейп-румы 
             <div class="kvest-help">
@@ -126,7 +124,7 @@ wp_enqueue_script( 'wp-api' );
           </div>
         </div>
         <div class="mini-box-2" data-id="2" data-image="bg-kvest-2">
-          <div class="image" style='z-index: 1000;background: url("/images/pr-2-1.png") no-repeat 50% 50%;'></div>
+          <div class="image" style='z-index: 1000;-webkit-mask: url("/images/qv-action.svg") no-repeat 50% 50%; mask: url("/images/qv-action.svg") no-repeat 50% 50%;'></div>
           <div class='default-text'>
             Экшн-квесты
             <div class="kvest-help">
@@ -140,7 +138,7 @@ wp_enqueue_script( 'wp-api' );
           </div>
         </div>
         <div class="mini-box" data-id="2" data-image="bg-kvest-3">
-          <div class="image" style='z-index: 1000;background: url("/images/pr-2-1.png") no-repeat 50% 50%;'></div>
+          <div class="image" style='z-index: 1000;-webkit-mask: url("/images/qv-roleqv.svg") no-repeat 50% 50%; mask: url("/images/qv-roleqv.svg") no-repeat 50% 50%;'></div>
           <div class='default-text'>
             Ролевые квесты
             <div class="kvest-help">
@@ -153,7 +151,7 @@ wp_enqueue_script( 'wp-api' );
           </div>
         </div>
         <div class="mini-box-2" data-id="2" data-image="bg-kvest-4">
-          <div class="image" style='z-index: 1000;background: url("/images/pr-2-1.png") no-repeat 50% 50%;'></div>
+          <div class="image" style='z-index: 1000;-webkit-mask: url("/images/qv-gorq.svg") no-repeat 50% 50%; mask: url("/images/qv-gorq.svg") no-repeat 50% 50%;'></div>
           <div class='default-text'>
             Городские квесты
             <div class="kvest-help">
@@ -166,7 +164,7 @@ wp_enqueue_script( 'wp-api' );
           </div>
         </div>
         <div class="mini-box" data-id="2" data-image="bg-kvest-5">
-          <div class="image" style='z-index: 1000;background: url("/images/pr-2-1.png") no-repeat 50% 50%;'></div>
+          <div class="image" style='z-index: 1000;-webkit-mask: url("/images/qv-qvshadow.svg") no-repeat 50% 50%; mask: url("/images/qv-qvshadow.svg") no-repeat 50% 50%;'></div>
           <div class='default-text'>
             Квесты в темноте
             <div class="kvest-help">
@@ -180,7 +178,7 @@ wp_enqueue_script( 'wp-api' );
           </div>
         </div>
         <div class="mini-box-2" data-id="2" data-image="bg-kvest-6">
-          <div class="image" style='z-index: 1000;background: url("/images/pr-2-1.png") no-repeat 50% 50%;'></div>
+          <div class="image" style='z-index: 1000;-webkit-mask: url("/images/qv-vr.svg") no-repeat 50% 50%; mask: url("/images/qv-vr.svg") no-repeat 50% 50%;'></div>
           <div class='default-text'>
             VR-квесты
             <div class="kvest-help">
@@ -193,7 +191,7 @@ wp_enqueue_script( 'wp-api' );
           </div>
         </div>
         <div class="mini-box" data-id="2" data-image="bg-kvest-7">
-          <div class="image" style='z-index: 1000;background: url("/images/pr-2-1.png") no-repeat 50% 50%;'></div>
+          <div class="image" style='z-index: 1000;-webkit-mask: url("/images/qv-autoq.svg") no-repeat 50% 50%; mask: url("/images/qv-autoq.svg") no-repeat 50% 50%;'></div>
           <div class='default-text'>
             Автоквесты
             <div class="kvest-help">
@@ -206,7 +204,7 @@ wp_enqueue_script( 'wp-api' );
           </div>
         </div>
         <div class="mini-box-2" data-id="2" data-image="bg-kvest-8">
-          <div class="image" style='z-index: 1000;background: url("/images/pr-2-1.png") no-repeat 50% 50%;'></div>
+          <div class="image" style='z-index: 1000;-webkit-mask: url("/images/qv-nightq.svg") no-repeat 50% 50%; mask: url("/images/qv-nightq.svg") no-repeat 50% 50%;'></div>
           <div class='default-text'>
             Ночные квесты
             <div class="kvest-help">
@@ -222,18 +220,82 @@ wp_enqueue_script( 'wp-api' );
   </section>
   <section id="position-4">
     <div class="main-container">
-      <div class="header">Билеты</div>
-      <div class="subheader">Скоро мы запустим продажу билетов. Оставьте свою почту, а мы уж позаботимся о том, чтобы вы не пропустили это важное событие. Подумайте — первые билеты будут дешевле!</div>
-      <div class="input-header">Просто оставьте адрес электронной почты и нажмите на кнопку, дальше мы сами.</div>
-      <div></div>
-      <div>
-        <input type="checkbox" class="checkbox" id="checkbox" />
-        <label for="checkbox">Если будет ещё что интересное — тоже пишите.</label>
-      </div>
+      <form action="">
+        <div class="header">Билеты</div>
+        <div class="subheader">Скоро мы запустим продажу билетов. Оставьте свою почту, а мы уж позаботимся о том, чтобы вы не пропустили это важное событие.<br /> Подумайте — первые билеты будут дешевле!</div>
+        <div class="input-header">Просто оставьте адрес электронной почты и нажмите на кнопку, дальше мы сами.</div>
+        <div class="send-email">
+          <input type="text" class="ps-email">
+          <button class="send-btn">
+            Напишите мне
+          </button>
+        </div>
+        <div class='squaredThree'>
+          <input type="checkbox" value="None" id="squaredThree" name="check" checked />
+          <label for="squaredThree"></label>
+          <div class="text-for-lable">
+            Если будет ещё что интересное — тоже пишите.
+          </div>
+        </div>
+      </form>
     </div>
   </section>
   <section id="position-5">
-    <div class="main-container"></div>
+    <div class="main-container">
+      <div class="header">Ярославль</div>
+      <div class="subheader">Ты еще раздумываешь? Ты просто не знаешь, как классно в Ярославле.<br /> Нужны еще причины?</div>
+      <div class="agitation">
+        <div class="input-email"><button class="send-btn">Найти причины поехать в Ярославль</button></div>
+        <div class="input-text">Нажимая на эту кнопку, вы подтверждаете,
+что уже почти готовы хорошо провести
+выходные</div>
+      </div>
+      <div class="bg-middle-main">
+        <div class="bg-middle"></div>
+      </div>
+      <div class="header">Как добраться</div>
+      <div class="panel">
+        <div class="tab">
+          <button class="tablinks" onclick="openCity(event, 'moscow')"><span>Из Москвы</span></button>
+          <button class="tablinks active" onclick="openCity(event, 'piter')"><span>Из Питера</span></button>
+          <button class="tablinks" onclick="openCity(event, 'other')"><span>Откуда угодно</span></button>
+        </div>
+        <div class="content">
+          <div id="moscow" class="tabcontent">
+            <h3>Из Москвы</h3>
+          </div>
+
+          <div id="piter" class="tabcontent" style="display: flex;">
+            <div class="content-tab">
+              <div class="icon" style="background: url('/images/airplane.svg') no-repeat 50% 50%; background-size: 550%;"></div>
+              <div class="text">Ура! Прямые рейсы из Пулково!
+Полтора часа до улётного
+веселья на Авиасейлз.</div>
+              <div class="button" style="background: url('/images/avia.png') no-repeat 50% 50%;"></div>
+            </div>
+            <div class="content-tab">
+              <div class="icon" style="background: url('/images/train.svg') no-repeat 50% 50%; background-size: 550%;"></div>
+              <div class="text">Поезд 337Ж. 17:45 — 7:00. 
+Или другие варианты поездов
+на Туту.</div>
+              <div class="button" style="background: url('/images/tutu.png') no-repeat 50% 50%;"></div>
+            </div>
+            <div class="content-tab">
+              <div class="icon" style="background: url('/images/car.svg') no-repeat 50% 50%; background-size: 550%;"></div>
+              <div class="text">12 часов увлекательного
+путешествия с попутчиками
+от Бипкар.</div>
+              <div class="button" style="background: url('/images/bip.png') no-repeat 50% 50%;"></div>
+            </div>
+          </div>
+
+          <div id="other" class="tabcontent">
+            <h3>Откуда угодно</h3>
+          </div>
+        </div>
+       
+      </div>
+    </div>
   </section>
   <section id="position-6">
     <div class="main-container">
@@ -299,7 +361,7 @@ wp_enqueue_script( 'wp-api' );
         © 2017. Фестиваль «Место Квеста»
       </div>
       <div>
-        <a href="#">Политика конфиденциальности</a>
+        <a class="rule" href="#">Политика конфиденциальности</a>
       </div>
     </div>
   </div>
@@ -318,8 +380,27 @@ wp_enqueue_script( 'wp-api' );
     }).on('mouseleave', function() {
       $(this).css("background","none");
     });
-
   });
+  function openCity(evt, cityName) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+      }
+
+      // Get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(cityName).style.display = "flex";
+      evt.currentTarget.className += " active";
+  }
   </script>
   <script>
    /* var Person = Backbone.Model.extend({

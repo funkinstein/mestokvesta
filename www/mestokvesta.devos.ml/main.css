@@ -13,6 +13,9 @@ ul {
 	list-style: none;
 	padding: 0;
 }
+* {
+  box-sizing: border-box;
+}
 input[type="text"],input[type="email"] {
 	/* Remove First */
 	-webkit-appearance: none;
@@ -27,7 +30,7 @@ input[type="text"],input[type="email"] {
 	background: transparent;
 	outline: none;
 	width: 50%;
-	height: 25px;
+	height: 45px;
 	font-size: 1em;
 	font-weight: 700;
 }
@@ -47,7 +50,7 @@ textarea {
 	background: transparent;
 	outline: none;
 	width: 50%;
-	height: 100px;
+	height: 140px;
 	font-size: 1em;
 	font-weight: 700;
 }
@@ -68,36 +71,95 @@ button:active {
   background: rgb(238,238,238) linear-gradient(rgb(238,238,238), rgb(224,224,224));
   box-shadow: 0 1px 2px rgba(0,0,0,.1) inset;
 }
-/* Cначала обозначаем стили для IE8 и более старых версий
-т.е. здесь мы немного облагораживаем стандартный чекбокс. */
-.checkbox {
-  vertical-align: top;
-  margin: 0 3px 0 0;
-  width: 17px;
-  height: 17px;
+
+/* Style the tab */
+div.tab {
+    overflow: hidden;
 }
-/* Это для всех браузеров, кроме совсем старых, которые не поддерживают
-селекторы с плюсом. Показываем, что label кликабелен. */
-.checkbox + label {
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    border-top: none;
+}
+
+.send-btn {
+	font-family: 'PT Mono', monospace;
+	display: flex;
+	font-weight: 500;
+	text-decoration: none;
+	padding: 10px 25px 10px 25px;
+	color: white;
+	background: #ce5fba;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	height: 50px;
+	font-size: 1.1em;
+	background: -moz-linear-gradient(top, #ce5fba 0%, #b55385 51%, #a03172 100%); 
+	background: -webkit-linear-gradient(top, #ce5fba 0%,#b55385 51%,#a03172 100%);
+	background: linear-gradient(to bottom, #ce5fba 0%,#b55385 51%,#a03172 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ce5fba', endColorstr='#a03172',GradientType=0 ); 
+	border-radius: 5px;
+	border: none;
+}
+.squaredThree {
+  position: relative;
+}
+.squaredThree label {
+  width: 30px;
+  height: 30px;
   cursor: pointer;
-}
-
-/* Далее идет оформление чекбокса в современных браузерах, а также IE9 и выше.
-Благодаря тому, что старые браузеры не поддерживают селекторы :not и :checked,
-в них все нижеследующие стили не сработают. */
-
-/* Прячем оригинальный чекбокс. */
-.checkbox:not(checked) {
   position: absolute;
-  opacity: 0;
+  top: 0;
+  left: 0;
+  border-radius: 4px;
+	border: 2px solid #06c3ff;
 }
-.checkbox:not(checked) + label {
-  position: relative; /* будем позиционировать псевдочекбокс относительно label */
-  padding: 0 0 0 60px; /* оставляем слева от label место под псевдочекбокс */
+.squaredThree label:after {
+	content: '';
+	width: 30px;
+	height: 14px;
+	position: absolute;
+	top: -2px;
+	left: 1px;
+	border: 5px solid #06c3ff;
+	border-top: none;
+	border-right: none;
+	background: transparent;
+	opacity: 0;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
 }
-/* Показываем получение фокуса. */
-.checkbox:focus + label:before {
-  box-shadow: 0 0 0 3px rgba(255,255,0,.5);
+.squaredThree label:hover::after {
+  opacity: 0.3;
+}
+.squaredThree input[type=checkbox] {
+  visibility: hidden;
+}
+.squaredThree input[type=checkbox]:checked + label:after {
+  opacity: 1;
+}
+.text-for-lable {
+	margin-left: 40px;
+	line-height: 0px;
+	font-size: 1.1em;
 }
 #header {
 	width: 65%;
@@ -121,9 +183,10 @@ button:active {
 }
 #header ul li a {
 	border-bottom: 1px solid #000;
-	font-weight: 500;
+	font-weight: 700;
 	text-decoration: none;
 	margin: 10px;
+	font-size: 1.1em;
 }
 .main-container {
 	width: 75%;
@@ -133,6 +196,7 @@ button:active {
 }
 #header .button-buy {
 	display: flex;
+	height: 40px;
 	font-weight: 500;
 	text-decoration: none;
 	padding: 10px 20px 10px 20px;
@@ -146,15 +210,21 @@ button:active {
 	border-radius: 5px;
 }
 #position-1 {
-	background: url(/images/Exposure1.png);
-	height: 930px;
+	background: url(/images/first-position.png);
+	height: 1120px;
 	width: 100%;
 	background-position: 50% 50%;
 	background-size: cover;
 	margin: 0;
 	padding: 0;
 	background-repeat: no-repeat;
-	
+}
+#position-1:after {
+	content: '';
+	background: url(/images/first-bg.png);
+	background-position: 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 #footer {
 	display: flex;
@@ -162,6 +232,19 @@ button:active {
 	flex-wrap: wrap;
 	align-content: center;
 	flex-direction: column;
+	background: url('/images/footer-bg.png') no-repeat 50% 50%;
+	background-size: cover;
+	height: auto;
+	color: #fff;
+}
+#footer a {
+	color: #fff;
+}
+#footer .rule {
+	color: #3fb5f1;
+}
+#footer .footer-social {
+    padding: 40px;
 }
 #footer .footer-social ul {
 	display: flex;
@@ -240,10 +323,20 @@ button:active {
 	align-content: center;
 	flex-direction: column;
 	font-family: 'PT Mono', monospace;
+
+}
+#position-2:before {
+    content: '';
+    background: url(/images/first-bg.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 125px;
 }
 #position-2 .header {
 	font-size: 6em;
 	font-weight: 700;
+	text-align: center;
 }
 #position-2 .subheader {
 	font-size: 2.3em;
@@ -293,14 +386,20 @@ button:active {
 	align-content: center;
 	flex-direction: column;
 	font-family: 'PT Mono', monospace;
+	background: url('/images/prog-bg.png') no-repeat 50% 50%;
+	background-size: cover;
+	height: 1730px;
 }
 #position-3 .header {
 	font-size: 6em;
 	font-weight: 700;
+	margin-bottom: 60px;
 }
 #position-3 .header-text {
 	font-family: 'PT Sans', sans-serif;
 	font-size: 1.25em;
+	margin-top: 25px;
+	margin-bottom: 25px;
 }
 #position-3 .main-text {
 	display: none;
@@ -322,18 +421,23 @@ button:active {
 	align-items: center;
 	text-align: left;
 	flex-direction: row;
-	width: 45%;
-	height: 140px;
+	width: 33%;
+	height: 170px;
 	padding-right: 15px;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	margin-right: 10%;
 }
 #position-3 .mini-box-2 {
 	display: flex;
 	align-items: center;
 	text-align: left;
 	flex-direction: row;
-	width: 45%;
-	height: 140px;
+	width: 33%;
+	height: 170px;
 	padding-right: 15px;
+	margin-top: 25px;
+	margin-bottom: 25px;
 }
 #position-3 .mini-box:hover .default-text {
 	display: none;
@@ -343,12 +447,11 @@ button:active {
 }
 #position-3 .mini-box:hover .main-text {
 	display: flex;
-	width: 80%;
-	height: 100%;
+	align-content: left;
+	flex-direction: column;
 	z-index: 5000;
 	color: #fff;
-	text-align: center;
-  align-items: center;
+	width: 67%;
 }
 #position-3 .mini-box-2:hover .default-text {
 	display: none;
@@ -358,18 +461,11 @@ button:active {
 }
 #position-3 .mini-box-2:hover .main-text {
 	display: flex;
-	width: 80%;
-	height: 100%;
+	align-content: left;
+	flex-direction: column;
 	z-index: 5000;
 	color: #fff;
-	text-align: center;
-  align-items: center;
-}
-#position-3 .game-zone .mini-box-2:hover .main-text {
-	color: #000;
-}
-#position-3 .game-zone .mini-box:hover .main-text {
-	color: #000;
+	width: 67%;
 }
 #position-3 .game-zone .mini-box-2:hover .main-text {
 	color: #000;
@@ -386,8 +482,11 @@ button:active {
 
 }
 #position-3 .image {
-	width: 50px; 
-	height: 50px; 
+	background-color: #000000;
+	-webkit-mask-size: 400px !important;
+	mask-size: 400px !important;
+	width: 100px; 
+	height: 70px; 
 	margin-left: 35px;
 	margin-right: 10px;
 	background-size: contain !important;
@@ -399,6 +498,188 @@ button:active {
 	align-content: center;
 	flex-direction: row;
 }
+#position-4 {
+	margin-top: 100px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-content: center;
+	flex-direction: column;
+	font-family: 'PT Sans', sans-serif;
+	background: url('/images/bil-bg.png') no-repeat 50% 50%;
+	background-size: cover;
+	height: 900px;
+	margin-top: -40px;
+}
+#position-4 .header {
+	font-size: 6em;
+	font-weight: 700;
+	font-family: 'PT Mono', monospace;
+	margin-top: -150px;
+}
+#position-4 .subheader {
+	font-size: 1.8em;
+	font-weight: 900;
+	text-align: left;
+	margin-top: 30px;
+	margin-bottom: 60px;
+	width: 70%;
+}
+#position-4 .send-email {
+	display: flex;
+	justify-content: left;
+	flex-wrap: wrap;
+	align-content: left;
+	flex-direction: row;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+#position-4 .ps-email {
+	width: 70%;
+	height: 50px;
+	border: none;
+	background: #fff;
+}
+#position-4 .send-btn {
+	width: auto;
+	margin: 0;
+	position: relative;
+	left: -20px;
+	border-radius: 0 5px 5px 0;
+}
+
+#position-5 {
+	margin-top: 100px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-content: center;
+	flex-direction: column;
+	font-family: 'PT Sans', sans-serif;
+}
+#position-5 .header {
+	font-size: 6em;
+	font-weight: 700;
+	font-family: 'PT Mono', monospace;
+}
+#position-5 .subheader {
+	font-size: 1.8em;
+	font-weight: 900;
+	text-align: left;
+}
+#position-5 .bg-middle {
+	background: url('/images/bg-middle.png') no-repeat 50% 50%;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+}
+#position-5 .bg-middle-main {
+	height: 760px;
+	margin-top: -640px;
+	position: absolute;
+	left: 0;
+	width: 100%;
+}
+#position-5 .agitation {
+	margin-bottom: 640px;
+}
+#position-5 .panel {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-content: center;
+	flex-direction: column;
+}
+#position-5 .panel .tab {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-content: center;
+	flex-direction: row;
+	font-size: 3em;
+	font-family: 'PT Mono', monospace;
+	
+}
+#position-5 .panel .tab span {
+	border-bottom: 1px solid #aaa;
+}
+#position-5 .panel .tabcontent {
+	justify-content: center;
+	width: 100%;
+	align-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+#position-5 .agitation {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: row;
+}
+#position-5 .input-email {
+	width: 50%;
+	margin-right: 30px;
+}
+#position-5 .input-email .send-btn {
+	width: 100%;
+	padding: 0;
+	text-align: center;
+	display: block;
+	margin: 0;
+}
+#position-5 .input-text {
+	width: 30%;
+	font-size: 1.3em;
+}
+#position-5 .panel .tabcontent .content-tab {
+	width: 30%;
+}
+#position-5 .panel .tabcontent .content-tab .text {
+	text-align: left;
+	height: 60px;
+	width: 65%;
+}
+#position-5 .panel .tabcontent .content-tab .icon {
+	width: 110px;
+	height: 110px;
+}
+#position-5 .panel .tab .active {
+	background: url(/images/bg-tab.png) no-repeat 50% 50%;
+	background-size: cover;
+	border-bottom: none;
+}
+#position-5 .panel .tab .active span {
+	border-bottom: none;
+}
+#position-5 .panel .tablinks {
+	height: 100px;
+	width: 365px;
+	margin: auto 10px auto 10px;
+}
+#position-5 .panel .tabcontent .button {
+	height: 100px;
+	display: flex;
+	align-content: left;
+	justify-content: left;
+	align-items: left;
+	width: 165px;
+}
+.tabcontent {
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
 #position-6 {
 	margin-top: 100px;
 	display: flex;
@@ -407,13 +688,18 @@ button:active {
 	align-content: center;
 	flex-direction: column;
 	font-family: 'PT Mono', monospace;
+	background: url('/images/org-bg.png') no-repeat 50% 50%;
+	background-size: cover;
+	height: 1450px;
 }
+
 #position-6 .header {
 	font-size: 6em;
 	font-weight: 700;
 }
 #position-6 .organization-box {
-	margin-top: 60px;
+	margin-top: 120px;
+  margin-bottom: 120px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: left;
@@ -456,15 +742,17 @@ button:active {
 	flex-wrap: wrap;
 	align-content: center;
 	flex-direction: row;
+	margin-top: 110px;
 }
 #position-6 img {
 	width: 21%;
 	height: 5%;
 	margin-left: 0;
 	margin-right: 20px;
+	margin-bottom: 50px;
 }
 #position-7 {
-	margin-top: 200px;
+	margin-top: 50px;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
@@ -516,25 +804,6 @@ button:active {
 	flex-wrap: wrap;
 	flex-direction: column;
 }
-#position-7 .send-btn {
-	font-family: 'PT Mono', monospace;
-	display: flex;
-	font-weight: 500;
-	text-decoration: none;
-	padding: 10px 25px 10px 25px;
-	color: white;
-	background: #ce5fba;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	height: 50px;
-	font-size: 1.1em;
-	background: -moz-linear-gradient(top, #ce5fba 0%, #b55385 51%, #a03172 100%); 
-	background: -webkit-linear-gradient(top, #ce5fba 0%,#b55385 51%,#a03172 100%);
-	background: linear-gradient(to bottom, #ce5fba 0%,#b55385 51%,#a03172 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ce5fba', endColorstr='#a03172',GradientType=0 ); 
-	border-radius: 5px;
-	border: none;
-}
 .info-telegram {
 	display: inline-flex;
 	background: url('/images/telegram.png') no-repeat 50% 50%;
@@ -563,5 +832,10 @@ button:active {
 @media screen and (min-width: 1440px) {
 	#position-1 {
 		background-size: cover;
+	}
+}
+@media screen and (max-width: 1440px) {
+	#position-3 .mini-box,  #position-3 .mini-box-2 {
+		width: 45%;
 	}
 }
