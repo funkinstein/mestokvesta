@@ -24,7 +24,6 @@ wp_enqueue_script( 'wp-api' );
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
   <script type="text/javascript" src="/js/scroll.js"></script>
   <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
   <link rel="stylesheet" href="/main.css">
   
 <script type="text/template" id="surfboard-template">

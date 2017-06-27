@@ -1,3 +1,15 @@
+@font-face {
+    font-family: "PT Mono";
+    src: url(sansation_light.woff);
+}
+
+@font-face {
+    font-family: "PT Mono bold";
+    src: url(sansation_light.woff);
+		font-weight: bold;
+}
+
+
 body, html {
 	width: 100%;
 	height: 100%;
@@ -162,18 +174,19 @@ div.tab button.active {
 	font-size: 1.1em;
 }
 #header {
-	width: 65%;
+	width: 75%;
 	margin: 10px auto 10px auto;
 	position: relative;
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	flex-wrap: wrap;
 	align-content: center;
 	flex-direction: row;
+	margin: auto;
 }
 #header ul {
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	flex-wrap: wrap;
 	align-content: center;
 	flex-direction: row;
@@ -186,7 +199,8 @@ div.tab button.active {
 	font-weight: 700;
 	text-decoration: none;
 	margin: 10px;
-	font-size: 1.1em;
+	font-size: 1.563em;
+	margin: auto;
 }
 .main-container {
 	width: 75%;
@@ -196,11 +210,12 @@ div.tab button.active {
 }
 #header .button-buy {
 	display: flex;
-	height: 40px;
+	height: 50px;
 	font-weight: 500;
+	font-size: 1.563em;
 	text-decoration: none;
 	padding: 10px 20px 10px 20px;
-	margin: 5px;
+	margin: 40px auto;
 	color: white;
 	background: #ce5fba;
 	background: -moz-linear-gradient(top, #ce5fba 0%, #b55385 51%, #a03172 100%); 
@@ -256,10 +271,12 @@ div.tab button.active {
 }
 #footer .footer-copy {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	flex-wrap: wrap;
 	align-content: center;
+	margin: 0 auto;
 	flex-direction: row;
+	width: 75%;
 }
 #position-1 {
 	display: flex;
@@ -274,18 +291,20 @@ div.tab button.active {
 	background: url('/images/logo.png') no-repeat 50% 50%;
 	margin: 0 auto;
 	display: flex;
-	height: 400px;
-	width: 800px;
+	height: 600px;
+	width: 100%;
 	background-size: contain;
 	margin-top: -100px;
 }
 #position-1 .middle-box {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	flex-wrap: wrap;
 	align-content: center;
 	flex-direction: row;
-	font-size: 1.5em;
+	font-size: 2.188em;
+	margin-top: 50px;
+	margin-bottom: 50px;
 }
 #position-1 .middle-box .first-box {
 	padding: 15px 20px 15px 20px;
@@ -310,10 +329,10 @@ div.tab button.active {
 	text-align: center;
 }
 #position-1 .info-text {
-	font-size: 2em;
+	font-size: 2.5em;
 	text-align: center;	
 	font-family: 'PT Sans', sans-serif;
-	width: 800px;
+	width: 70%;
 	margin: 40px auto 20px auto;
 }
 #position-2 {
@@ -334,15 +353,20 @@ div.tab button.active {
     height: 125px;
 }
 #position-2 .header {
-	font-size: 6em;
+	font-size: 6.250em;
 	font-weight: 700;
-	text-align: center;
+	text-align: justify;
+}
+#position-2 .header:after {
+	content: "";
+  display: inline-block;
+  width: 100%;
 }
 #position-2 .subheader {
-	font-size: 2.3em;
+	font-size: 2.5em;
 	font-weight: 900;
 	text-align: center;
-	margin-top: 30px;
+  margin-top: -50px;
 	margin-bottom: 30px;
 	padding: 50px;
 	width: 800px;
@@ -391,28 +415,29 @@ div.tab button.active {
 	height: 1730px;
 }
 #position-3 .header {
-	font-size: 6em;
+	font-size: 6.250em;
 	font-weight: 700;
 	margin-bottom: 60px;
 }
 #position-3 .header-text {
 	font-family: 'PT Sans', sans-serif;
-	font-size: 1.25em;
+	font-size: 1.875em;
 	margin-top: 25px;
 	margin-bottom: 25px;
 }
 #position-3 .main-text {
 	display: none;
+	font-size: 1.250em;
 }
 #position-3 .default-text {
 	display: flex;
-	font-size: 1.3em;
+	font-size: 2.651em;
 	font-weight: 700;
 	align-content: left;
 	flex-direction: column;
 }
 #position-3 .game-zone .kvest-help {
-	font-size: 0.7em;
+	font-size: 0.450em;
 	font-weight: 500;
 	text-decoration: none;
 }
@@ -421,7 +446,7 @@ div.tab button.active {
 	align-items: center;
 	text-align: left;
 	flex-direction: row;
-	width: 33%;
+	width: 37.5%;
 	height: 170px;
 	padding-right: 15px;
 	margin-top: 25px;
@@ -433,7 +458,7 @@ div.tab button.active {
 	align-items: center;
 	text-align: left;
 	flex-direction: row;
-	width: 33%;
+	width: 37.5%;
 	height: 170px;
 	padding-right: 15px;
 	margin-top: 25px;
@@ -451,7 +476,7 @@ div.tab button.active {
 	flex-direction: column;
 	z-index: 5000;
 	color: #fff;
-	width: 67%;
+	width: calc(99% - 100px);
 }
 #position-3 .mini-box-2:hover .default-text {
 	display: none;
@@ -465,7 +490,7 @@ div.tab button.active {
 	flex-direction: column;
 	z-index: 5000;
 	color: #fff;
-	width: 67%;
+	width: calc(99% - 100px);
 }
 #position-3 .game-zone .mini-box-2:hover .main-text {
 	color: #000;
@@ -485,7 +510,7 @@ div.tab button.active {
 	background-color: #000000;
 	-webkit-mask-size: 400px !important;
 	mask-size: 400px !important;
-	width: 100px; 
+	width: calc(1% + 100px);
 	height: 70px; 
 	margin-left: 35px;
 	margin-right: 10px;
@@ -512,18 +537,24 @@ div.tab button.active {
 	margin-top: -40px;
 }
 #position-4 .header {
-	font-size: 6em;
+	font-size: 6.250em;
 	font-weight: 700;
 	font-family: 'PT Mono', monospace;
 	margin-top: -150px;
 }
 #position-4 .subheader {
-	font-size: 1.8em;
+	font-size: 1.875em;
 	font-weight: 900;
 	text-align: left;
 	margin-top: 30px;
 	margin-bottom: 60px;
 	width: 70%;
+}
+#position-4 .input-header {
+	font-size: 1.250em;
+}
+#position-4 .text-for-lable {
+	font-size: 1.250em;
 }
 #position-4 .send-email {
 	display: flex;
@@ -533,9 +564,10 @@ div.tab button.active {
 	flex-direction: row;
 	margin-top: 10px;
 	margin-bottom: 30px;
+	position: relative;
 }
 #position-4 .ps-email {
-	width: 70%;
+	width: 100%;
 	height: 50px;
 	border: none;
 	background: #fff;
@@ -543,8 +575,8 @@ div.tab button.active {
 #position-4 .send-btn {
 	width: auto;
 	margin: 0;
-	position: relative;
-	left: -20px;
+	position: absolute;
+	right: 0;
 	border-radius: 0 5px 5px 0;
 }
 
@@ -558,14 +590,16 @@ div.tab button.active {
 	font-family: 'PT Sans', sans-serif;
 }
 #position-5 .header {
-	font-size: 6em;
+	font-size: 6.250em;
 	font-weight: 700;
 	font-family: 'PT Mono', monospace;
 }
 #position-5 .subheader {
-	font-size: 1.8em;
+	font-size: 1.875em;
 	font-weight: 900;
 	text-align: left;
+	margin-top: 20px;
+	margin-bottom: 30px;
 }
 #position-5 .bg-middle {
 	background: url('/images/bg-middle.png') no-repeat 50% 50%;
@@ -581,9 +615,10 @@ div.tab button.active {
 	width: 100%;
 }
 #position-5 .agitation {
-	margin-bottom: 640px;
+	margin-bottom: 700px;
 }
 #position-5 .panel {
+	margin-top: 50px;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
@@ -604,7 +639,7 @@ div.tab button.active {
 	border-bottom: 1px solid #aaa;
 }
 #position-5 .panel .tabcontent {
-	justify-content: center;
+	justify-content: space-between;
 	width: 100%;
 	align-content: center;
 	align-items: center;
@@ -628,10 +663,15 @@ div.tab button.active {
 	text-align: center;
 	display: block;
 	margin: 0;
+		background: #87e0fd; /* Old browsers */
+		background: -moz-linear-gradient(top,  #87e0fd 0%, #53cbf1 40%, #05abe0 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #87e0fd 0%,#53cbf1 40%,#05abe0 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #87e0fd 0%,#53cbf1 40%,#05abe0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#05abe0',GradientType=0 ); /* IE6-9 */
 }
 #position-5 .input-text {
 	width: 30%;
-	font-size: 1.3em;
+	font-size: 1.250em;
 }
 #position-5 .panel .tabcontent .content-tab {
 	width: 30%;
@@ -645,10 +685,24 @@ div.tab button.active {
 	width: 110px;
 	height: 110px;
 }
-#position-5 .panel .tab .active {
+#position-5 .panel .tab .tablinks:nth-child(1).active {
+	background: url(/images/bg-tab-1.png) no-repeat 50% 50%;
+	background-size: cover;
+	border-bottom: none;
+	margin-right: 80px;
+}
+#position-5 .panel .tab .tablinks:nth-child(2).active {
 	background: url(/images/bg-tab.png) no-repeat 50% 50%;
 	background-size: cover;
 	border-bottom: none;
+	margin-left: 40px;
+	margin-right: 40px;
+}
+#position-5 .panel .tab .tablinks:nth-child(3).active {
+	background: url(/images/bg-tab-2.png) no-repeat 50% 50%;
+	background-size: cover;
+	border-bottom: none;
+	width: 455px;
 }
 #position-5 .panel .tab .active span {
 	border-bottom: none;
@@ -694,7 +748,7 @@ div.tab button.active {
 }
 
 #position-6 .header {
-	font-size: 6em;
+	font-size: 6.250em;
 	font-weight: 700;
 }
 #position-6 .organization-box {
@@ -761,7 +815,7 @@ div.tab button.active {
 	font-family: 'PT Mono', monospace;
 }
 #position-7 .header {
-	font-size: 6em;
+	font-size: 6.250em;
 	font-weight: 700;
 }
 #position-7 .info {
